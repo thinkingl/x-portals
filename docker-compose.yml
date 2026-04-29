@@ -1,0 +1,13 @@
+version: '3.8'
+services:
+  x-portals:
+    build: .
+    container_name: x-portals
+    ports:
+      - "8080:8000"
+    volumes:
+      - ./data:/app/data
+    environment:
+      - SECRET_KEY=change-me-to-a-random-string
+      - ENCRYPTION_KEY=change-me-to-a-32-byte-string-xxxx
+    restart: unless-stopped
